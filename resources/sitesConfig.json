@@ -1,0 +1,74 @@
+{
+    "sites": {
+      "whatsapp": {
+        "webAddress": "https://web.whatsapp.com",
+        "operations": [
+          {
+            "action": "wait_for_selector",
+            "selector": "div[role='button'][title='New chat']",
+            "timeout": 120000
+          },
+          {
+            "action": "click",
+            "selector": "div[role='button'][title='New chat']"
+          },
+          {
+            "action": "fill",
+            "selector": "div[role='textbox'] >> p",
+            "value": "{{phoneNo}}"
+          },
+          {
+            "action": "wait_for_selector",
+            "selector": "div[role='listitem']"
+          },
+          {
+            "action": "click",
+            "selector": "div[role='listitem']",
+            "index": 1
+          },
+          {
+            "action": "clear",
+            "selector": "div[aria-placeholder='Type a message']"
+          },
+          {
+            "action": "type",
+            "selector": "div[aria-placeholder='Type a message']",
+            "value": "{{message}}",
+            "delay": 100
+          },
+          {
+            "action": "logcsv",
+            "message_sent": true,
+            "attachments_sent": false
+          },
+          {
+            "action": "click",
+            "selector": "button[aria-label='Send']"
+          },
+          {
+            "action": "click",
+            "selector": "div[title='Attach']"
+          },
+          {
+            "action": "attach_files",
+            "selector": "div[id='main'] >> footer >> span:has-text('Document') + input",
+            "files": "{{attachments}}"
+          },
+          {
+            "action": "click",
+            "selector": "div[role='button'][aria-label='Send']"
+          },
+          {
+            "action": "logcsv",
+            "message_sent": true,
+            "attachments_sent": true
+          },
+          {
+            "action": "sleep",
+            "duration": 5
+          }
+        ]
+      }
+    }
+  }
+  

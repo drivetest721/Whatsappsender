@@ -1,0 +1,4 @@
+envAutomation
+*.csv
+*.log
+__pycache__
