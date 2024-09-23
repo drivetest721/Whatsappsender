@@ -2,3 +2,5 @@ envAutomation
 *.csv
 *.log
 __pycache__
+build
+dist
