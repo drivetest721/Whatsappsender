@@ -61,14 +61,34 @@ class WhatsAppAutomation:
                     value = context_data[operation['value'].strip("{{").strip("}}")]
                     await page.locator(selector).nth(index).type(value, delay=operation.get('delay', 0))
                     self.logger.log_info(f"Typed in selector: {selector} with value: {value}")
-                elif action == "attach_files":
+                
+                elif action == "attach_documents":
                     files = context_data[operation['files'].strip("{{").strip("}}")]
                     if files:
                         await page.locator(selector).nth(index).set_input_files(files)
                         self.logger.log_info(f"Attached files to selector: {selector}")
                         bAttachmentsAdded = True
                     else:
-                        self.logger.log_info(f"No files to be attached.")
+                        self.logger.log_info(f"No documents to be attached.")
+                
+                elif action == "attach_images":
+                    files = context_data[operation['files'].strip("{{").strip("}}")]
+                    if files:
+                        await page.locator(selector).nth(index).set_input_files(files)
+                        self.logger.log_info(f"Attached files to selector: {selector}")
+                        bAttachmentsAdded = True
+                    else:
+                        self.logger.log_info(f"No images to be attached.")
+
+                elif action == "attach_videos":
+                    files = context_data[operation['files'].strip("{{").strip("}}")]
+                    if files:
+                        await page.locator(selector).nth(index).set_input_files(files)
+                        self.logger.log_info(f"Attached files to selector: {selector}")
+                        bAttachmentsAdded = True
+                    else:
+                        self.logger.log_info(f"No videos to be attached.")
+
 
                 elif action == "sleep":
                     await asyncio.sleep(operation['duration'])
@@ -160,8 +180,7 @@ class WhatsAppAutomation:
                 for phoneNo, dictData in dictMessageData.items():
                     context_data = {
                         "phoneNo": phoneNo,
-                        "message": dictData["message"],
-                        "attachments": dictData["attachments"]
+                        **dictData
                     }
                     await self.execute_operations(page, operations, context_data)
 

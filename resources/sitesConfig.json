@@ -70,19 +70,49 @@
           "action": "click",
           "selector": "button[aria-label='Send']"
         },
+        
         {
           "action": "click",
           "selector": "div[title='Attach']"
         },
         {
-          "action": "attach_files",
+          "action": "attach_documents",
           "selector": "div[id='main'] >> footer >> span:has-text('Document') + input",
-          "files": "{{attachments}}"
+          "files": "{{document_attachments}}"
         },
         {
           "action": "click",
           "selector": "div[role='button'][aria-label='Send']"
         },
+        
+        {
+          "action": "click",
+          "selector": "div[title='Attach']"
+        },
+        {
+          "action": "attach_videos",
+          "selector": "div[id='main'] >> footer >> span:has-text('Photos & videos') + input",
+          "files": "{{video_attachments}}"
+        },
+        {
+          "action": "click",
+          "selector": "div[role='button'][aria-label='Send']"
+        },
+
+        {
+          "action": "click",
+          "selector": "div[title='Attach']"
+        },
+        {
+          "action": "attach_images",
+          "selector": "div[id='main'] >> footer >> span:has-text('Photos & videos') + input",
+          "files": "{{image_attachments}}"
+        },
+        {
+          "action": "click",
+          "selector": "div[role='button'][aria-label='Send']"
+        },
+
         {
           "action": "logcsv",
           "message_sent": true,

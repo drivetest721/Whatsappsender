@@ -1,10 +1,8 @@
 {
-    "+918733835756":{
-        "message":"Hii mitul this are **just random messages**, just **ignore this**",
-        "attachments":["d:\\USER_DATA\\user\\Downloads\\phone-number-pricing.csv", "d:\\USER_DATA\\user\\Downloads\\Python Interview Question Bank.docx"]
-    },
     "+917283851161":{
         "message":"This is a test message",
-        "attachments":["d:\\USER_DATA\\user\\Downloads\\phone-number-pricing.csv", "d:\\USER_DATA\\user\\Downloads\\Python Interview Question Bank.docx"]
+        "document_attachments":["d:\\USER_DATA\\user\\Downloads\\phone-number-pricing.csv", "d:\\USER_DATA\\user\\Downloads\\Python Interview Question Bank.docx"],
+        "image_attachments":["d:\\USER_DATA\\user\\Downloads\\passbook.jpeg"],
+        "video_attachments":["d:\\USER_DATA\\user\\Downloads\\screen-recording-2024-01-09-12_01.mp4"]
     }
 }
